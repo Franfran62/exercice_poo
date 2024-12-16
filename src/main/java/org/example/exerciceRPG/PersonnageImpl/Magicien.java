@@ -9,7 +9,7 @@ public class Magicien extends Personnage {
     private Weapon weapon;
 
     public Magicien(String name, int life, int strength) {
-        super(name, 15, 3, new Sword("Sword"));
+        super(name, 15, 3, new Sword());
 
     }
 }

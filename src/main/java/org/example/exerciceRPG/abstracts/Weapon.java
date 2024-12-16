@@ -1,6 +1,7 @@
 package org.example.exerciceRPG.abstracts;
 
 public abstract class Weapon {
+
     private String name;
 
     public Weapon(String name) {

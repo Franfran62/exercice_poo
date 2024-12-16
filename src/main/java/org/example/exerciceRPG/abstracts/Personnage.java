@@ -41,6 +41,7 @@ public abstract class Personnage implements Scallable {
         this.weapon = weapon;
     }
 
+    // Si un jour on veut qu'un personne porte une arme differente :)
     public Personnage(String name, int life, int strength, Weapon weapon) {
         this.name = name;
         this.life = life;

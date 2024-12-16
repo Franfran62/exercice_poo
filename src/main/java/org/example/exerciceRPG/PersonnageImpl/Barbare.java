@@ -7,6 +7,6 @@ import org.example.exerciceRPG.abstracts.Weapon;
 public class Barbare extends Personnage {
 
     public Barbare(String name, int life, int strength) {
-        super(name, 20, 20, new Massue("Massue"));
+        super(name, 20, 20, new Massue());
     }
 }

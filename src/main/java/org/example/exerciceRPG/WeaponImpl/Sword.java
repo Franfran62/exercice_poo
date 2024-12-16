@@ -3,8 +3,9 @@ package org.example.exerciceRPG.WeaponImpl;
 import org.example.exerciceRPG.abstracts.Weapon;
 
 public class Sword extends Weapon {
-    public Sword(String name) {
-        super(name);
+
+    public Sword() {
+        super("Epée");
     }
 
     @Override

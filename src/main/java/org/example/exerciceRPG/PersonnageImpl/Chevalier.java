@@ -6,6 +6,6 @@ import org.example.exerciceRPG.abstracts.Personnage;
 public class Chevalier extends Personnage {
 
     public Chevalier(String name, int life, int strength) {
-        super(name, 10, 8, new Sword("Sword"));
+        super(name, 10, 8, new Sword());
     }
 }
