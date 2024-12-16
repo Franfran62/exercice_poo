@@ -1,16 +1,17 @@
 package org.example.models.impl;
 
 import org.example.models.Area;
-import org.example.models.abstracts.Shape;
 
-public class Circle extends Shape implements Area {
+public class Circle implements Area {
 
-    public Circle(double[] dimensions) {
-        super(dimensions);
+    private Double radius;
+
+    public Circle(Double radius) {
+        this.radius = radius;
     }
 
     @Override
     public double area() {
-        return Math.PI * Math.pow(getDimensions()[0], 2);
+        return Math.PI * Math.pow(this.radius, 2);
     }
 }

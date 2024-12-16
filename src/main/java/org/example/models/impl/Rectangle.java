@@ -1,16 +1,35 @@
 package org.example.models.impl;
 
-import org.example.models.abstracts.Shape;
 import org.example.models.Area;
 
-public class Rectangle extends Shape implements Area {
+public class Rectangle implements Area {
 
-    public Rectangle(double[] dimensions) {
-        super(dimensions);
+    private Double length;
+    private Double width;
+
+    public Rectangle(Double length, Double width) {
+        this.length = length;
+        this.width = width;
     }
 
     @Override
     public double area() {
-        return getDimensions()[0] * getDimensions()[1];
+        return length * width;
+    }
+
+    public Double getLength() {
+        return length;
+    }
+
+    public void setLength(Double length) {
+        this.length = length;
+    }
+
+    public Double getWidth() {
+        return width;
+    }
+
+    public void setWidth(Double width) {
+        this.width = width;
     }
 }
