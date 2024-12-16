@@ -1,16 +1,19 @@
 package org.example;
 
-import org.example.models.Animal;
-import org.example.models.Cat;
-import org.example.models.Dog;
-import org.example.models.Duck;
+import org.example.models.impl.BankTransfert;
+import org.example.models.impl.CreditCard;
+import org.example.models.impl.Paypal;
 
 public class Main {
     public static void main(String[] args) {
 
-        Duck duck = new Duck("Donald", 3);
-        Cat cat = new Cat("Félix", 5);
-        Dog Yoshi = new Dog("Yoshi", 1);
-        Animal animal = new Animal("Animal", 10);
+        var creditCard = new CreditCard(100);
+        creditCard.pay();
+
+        var paypal = new Paypal(200);
+        paypal.pay();
+
+        var bankTransfert = new BankTransfert(300);
+        bankTransfert.pay();
     }
 }
