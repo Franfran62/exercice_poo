@@ -20,12 +20,9 @@ public abstract class Payment {
     }
 
     public void pay(int amount) {
-         if (amount > this.solde) {
-             throw new IllegalArgumentException("Solde insuffisant");
-         }
          this.setSolde(this.solde - amount);
          this.paymentMethod();
-         System.out.println("Votre nouveau solde: " + this.solde);
+         System.out.println("Votre nouveau solde est de: " + this.solde);
     }
 
     protected void paymentMethod() {
