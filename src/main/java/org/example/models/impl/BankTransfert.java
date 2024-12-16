@@ -9,7 +9,7 @@ public class BankTransfert extends Payment {
     }
 
     @Override
-    public void pay() {
+    protected void paymentMethod() {
         System.out.println("Paiement par virement bancaire");
     }
 }

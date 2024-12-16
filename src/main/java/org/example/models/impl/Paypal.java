@@ -9,7 +9,7 @@ public class Paypal extends Payment {
     }
 
     @Override
-    public void pay() {
-        System.out.println("Paiement par Paypal");
+    protected void paymentMethod() {
+        System.out.println("Paiement par PayPal");
     }
 }
