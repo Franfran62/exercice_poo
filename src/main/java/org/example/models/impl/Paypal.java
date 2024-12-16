@@ -1,15 +1,25 @@
 package org.example.models.impl;
 
-import org.example.models.abstracts.Payment;
+import org.example.models.Account;
+import org.example.models.interfaces.Payment;
 
-public class Paypal extends Payment {
+public class Paypal implements Payment {
 
-    public Paypal(int solde) {
-        super(solde);
+    private Account account;
+
+    public Paypal(Account account) {
+        this.account = account;
     }
 
     @Override
-    protected void paymentMethod() {
-        System.out.println("Paiement par PayPal");
+    public void paymentMethod() {
+        System.out.println("Paiement par Paypal");
+    }
+
+    @Override
+    public void pay(Account toAccount, int amount) {
+        this.account.setSolde(this.account.getSolde() - amount);
+        this.paymentMethod();
+        toAccount.addToSolde(amount);
     }
 }

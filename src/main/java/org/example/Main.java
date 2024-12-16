@@ -1,19 +1,16 @@
 package org.example;
 
+import org.example.models.Account;
 import org.example.models.impl.BankTransfert;
 import org.example.models.impl.CreditCard;
 import org.example.models.impl.Paypal;
 
 public class Main {
     public static void main(String[] args) {
+        var AcountA = new Account(100);
+        var AcountB = new Account(200);
 
-        var creditCard = new CreditCard(100);
-        creditCard.pay(50);
-
-        var paypal = new Paypal(200);
-        paypal.pay(50);
-
-        var bankTransfert = new BankTransfert(300);
-        bankTransfert.pay(50);
+        var creditCard = new CreditCard(AcountA);
+        var bankTransfert = new BankTransfert(AcountB);
     }
 }
