@@ -1,6 +1,7 @@
-package org.example.exercicePizza.impl;
+package org.example.exercicePizza.impl.produit;
 
 import org.example.exercicePizza.abstracts.Produit;
+import org.example.exercicePizza.impl.identifiable.Ingredient;
 
 public class Pizza extends Produit  {
 

@@ -1,4 +1,4 @@
-package org.example.exercicePizza.impl;
+package org.example.exercicePizza;
 
 public class Adresse {
 
