@@ -1,21 +1,17 @@
-package org.example.exerciceEncoreDesPizzas.comestible;
+package org.example.exerciceEncoreDesPizzas.comestible.abstracts;
 
 import org.example.exerciceEncoreDesPizzas.comestible.enums.TypeIngredient;
 
-public class Ingredient {
+public abstract class Ingredient {
 
     private String nom;
-    private TypeIngredient typeIngredient;
     private int prixHT;
-    private String aoc;
     private int nombreDeCalorie;
 
-    public Ingredient(String nom, int prixHT, String aoc, int nombreDeCalorie, TypeIngredient typeIngredient) {
+    public Ingredient(String nom, int prixHT, int nombreDeCalorie) {
         this.nom = nom;
         this.prixHT = prixHT;
-        this.aoc = aoc;
         this.nombreDeCalorie = nombreDeCalorie;
-        this.typeIngredient = typeIngredient;
     }
 
     public String getNom() {
@@ -26,14 +22,6 @@ public class Ingredient {
         this.nom = nom;
     }
 
-    public TypeIngredient getTypeIngredient() {
-        return typeIngredient;
-    }
-
-    public void setTypeIngredient(TypeIngredient typeIngredient) {
-        this.typeIngredient = typeIngredient;
-    }
-
     public int getPrixHT() {
         return prixHT;
     }
@@ -42,13 +30,6 @@ public class Ingredient {
         this.prixHT = prixHT;
     }
 
-    public String getAoc() {
-        return aoc;
-    }
-
-    public void setAoc(String aoc) {
-        this.aoc = aoc;
-    }
 
     public int getNombreDeCalorie() {
         return nombreDeCalorie;
