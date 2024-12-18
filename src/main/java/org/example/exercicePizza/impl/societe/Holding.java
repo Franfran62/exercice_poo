@@ -12,7 +12,7 @@ public class Holding extends DonneesOfficielles {
     private int nombreEmployes;
     private double CAPrevisionnel;
 
-    public Holding(Adresse adresse, String statutSocial, List<Societe> societes) {
+    private Holding(Adresse adresse, String statutSocial, List<Societe> societes) {
         super(adresse, statutSocial);
         this.societes = societes;
     }
