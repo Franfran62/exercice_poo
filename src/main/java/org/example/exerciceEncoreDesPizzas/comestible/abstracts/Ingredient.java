@@ -1,7 +1,5 @@
 package org.example.exerciceEncoreDesPizzas.comestible.abstracts;
 
-import org.example.exerciceEncoreDesPizzas.comestible.enums.TypeIngredient;
-
 public abstract class Ingredient {
 
     private String nom;
