@@ -6,20 +6,25 @@ import java.util.Set;
 
 public class Superheroes {
 
-    private HashMap<MaisonEdition, Set<String>> superheroes;
+    private HashMap<String, String> superheroMap = new HashMap<>();
+    private HashMap<String, Set<String>> superheroes = new HashMap<>();
 
     public Superheroes() {
-        this.superheroes = new HashMap<>();
-        addSuperhero("Superman", new MaisonEdition("DC Comics"));
-        addSuperhero("Batman",  new MaisonEdition("DC Comics"));
-        addSuperhero("Hulk", new MaisonEdition("Marvel"));
+        addSuperhero("Superman", "DC Comics");
+        addSuperhero("Batman", "DC Comics");
+        addSuperhero("Hulk", "Marvel");
     }
 
-    public void addSuperhero(String name, MaisonEdition maisonEdition) {
+    public void addSuperhero(String name, String maisonEdition) {
+        superheroMap.put(name, maisonEdition);
         superheroes.computeIfAbsent(maisonEdition, k -> new HashSet<>()).add(name);
     }
 
-    public Set<String> getValueOfKey(MaisonEdition maisonEdition) {
-        return superheroes.getOrDefault(maisonEdition, new HashSet<>());
+    public Set<String> getSuperheroes(String maisonEdition) {
+        return superheroes.get(maisonEdition);
+    }
+
+    public String getMaisonEdition(String superhero) {
+        return superheroMap.getOrDefault(superhero, null);
     }
 }
