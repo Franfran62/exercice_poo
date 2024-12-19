@@ -12,11 +12,6 @@ public abstract class Package implements Payable, Iterable<Produit> {
     protected int id;
     protected List<Payable> produits = new ArrayList<>();
 
-    @Override
-    public String toString() {
-        return "P";
-    }
-
     public Package(int id, List<Payable> produits) {
         this.id = id;
         this.produits = produits;

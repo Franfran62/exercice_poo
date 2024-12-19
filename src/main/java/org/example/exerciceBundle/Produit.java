@@ -38,11 +38,6 @@ public class Produit implements Payable {
         return poids;
     }
 
-    @Override
-    public String toString() {
-        return "";
-    }
-
     public static class ProduitBuilder {
 
         private static int id = 0;
