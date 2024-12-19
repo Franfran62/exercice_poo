@@ -68,14 +68,26 @@ public abstract class Package implements Payable, Iterable<Produit> {
 
     @Override
     public Iterator<Produit> iterator() {
-        List<Produit> produitToIterator = new ArrayList<>();
-        for (Payable produit : this.produits) {
-            if (produit instanceof Produit) {
-                produitToIterator.add((Produit) produit);
-            } else if (produit instanceof Package) {
-                produitToIterator.addAll(((Package) produit).listAllProduit((Package) produit));
+        Set<Package> visited = new HashSet<>();
+        List<Produit> response = new ArrayList<>();
+        Queue<Package> queue = new LinkedList<>();
+        queue.add(this);
+
+        while (!queue.isEmpty()) {
+            Package current = queue.poll();
+            if (visited.contains(current)) {
+                continue;
+            }
+            visited.add(current);
+
+            for (Payable produit : current.getProduits()) {
+                if (produit instanceof Produit) {
+                    response.add((Produit) produit);
+                } else if (produit instanceof Package) {
+                    queue.add((Package) produit);
+                }
             }
         }
-        return new ProduitIterator(produitToIterator);
+        return new ProduitIterator(response);
     }
 }
