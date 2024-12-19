@@ -24,23 +24,25 @@ public abstract class Package implements Payable, Iterable<Produit> {
 
     public abstract void addProduit(Payable produit);
 
-   public List<Produit> listAllProduit(Package pack) {
-       return listAllProduit(pack, new HashSet<>());
-   }
-
-   protected  List<Produit> listAllProduit(Package pack, Set<Package> visited) {
-        if (visited.contains(pack)) {
-            return Collections.emptyList();
-        }
-        visited.add(pack);
-
+    public List<Produit> listAllProduit(Package pack) {
+        Set<Package> visited = new HashSet<>();
         List<Produit> response = new ArrayList<>();
-        for (Payable produit : pack.getProduits()) {
-            if (produit instanceof Produit) {
-                response.add((Produit) produit);
-            } else if (produit instanceof Package) {
-                List<Produit> ProduitInside = ((Package) produit).listAllProduit((Package) produit, visited);
-                response.addAll(ProduitInside);
+        Queue<Package> queue = new LinkedList<>();
+        queue.add(pack);
+
+        while (!queue.isEmpty()) {
+            Package current = queue.poll();
+            if (visited.contains(current)) {
+                continue;
+            }
+            visited.add(current);
+
+            for (Payable produit : current.getProduits()) {
+                if (produit instanceof Produit) {
+                    response.add((Produit) produit);
+                } else if (produit instanceof Package) {
+                    queue.add((Package) produit);
+                }
             }
         }
         return response;
