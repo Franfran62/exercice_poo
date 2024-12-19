@@ -4,6 +4,7 @@ import org.example.exerciceBundle.abstracts.Package;
 import org.example.exerciceBundle.interfaces.Payable;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Box extends Package {

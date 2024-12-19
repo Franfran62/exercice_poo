@@ -29,7 +29,7 @@ class mp4tomp3 extends mp3 {
 
 public class Mp3Reader {
     public void read(mp4tomp3 mp3) {
-    System.out.println("Reading mp3" + mp4tomp3.getStream());
+    System.out.println("Reading mp3" + mp3.getStream());
     }
 }
 

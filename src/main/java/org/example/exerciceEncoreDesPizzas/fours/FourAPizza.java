@@ -13,10 +13,6 @@ public class FourAPizza {
         this.type = type;
     }
 
-    private double getTempsCuisson(Pizza pizza) {
-        return (double) pizza.getTemperatureDeCuissonIdeale() / this.temperature * pizza.getTempsDeCuisson();
-    }
-
     public void enfourner(Pizza pizza) {
         if (this.service.getNombrePizzaInside() >= this.type.getMaximumPizzaDedans()) {
             throw new IllegalStateException("Le four est plein");

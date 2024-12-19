@@ -1,11 +1,12 @@
 package org.example.exerciceBundle;
 
+import org.example.exerciceBundle.Iterators.ProduitIterator;
 import org.example.exerciceBundle.abstracts.Package;
 import org.example.exerciceBundle.interfaces.Payable;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Bundle extends Package {
 

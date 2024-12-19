@@ -1,8 +1,15 @@
 package org.example.exerciceBundle.interfaces;
 
-public interface Payable {
+
+import org.example.exerciceBundle.Produit;
+
+import java.util.Iterator;
+
+public interface Payable  {
 
     int getPrix();
     int getPoids();
     String getReference();
+
+
 }
